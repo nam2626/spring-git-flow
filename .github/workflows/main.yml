@@ -10,7 +10,7 @@ jobs:
     - name: Setup Java JDK
       uses: actions/setup-java@v4.6.0
       with:
-        distribution: 'jdk'
+        distribution: 'zulu'
         java-version: '21'
     - name: Creating a maven build
       run: |
