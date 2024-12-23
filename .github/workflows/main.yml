@@ -15,7 +15,7 @@ jobs:
     - name: Creating a maven build
       run: |
         chmod +x ./mvnw
-        ./mvn build
+        ./mvnw package
     - name: Set SSH key permissions 
       run: |
         mkdir -p ~/.ssh
@@ -31,7 +31,7 @@ jobs:
         ssh-keyscan -t ed25519 ec2-43-203-240-71.ap-northeast-2.compute.amazonaws.com >> ~/.ssh/known_hosts  # known_hosts에 서버 아이피에 관한것을 등록해주는 작업
         #              알고리즘  운영서버 주소
     - name: Deploy to Server
-      run: scp target/*.jar ubuntu@43.201.110.51:~/    
+      run: scp target/*.jar ubuntu@ec2-43-203-240-71.ap-northeast-2.compute.amazonaws.com:~/    
 
     - name: Run SSH commands
       run: |
