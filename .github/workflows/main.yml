@@ -7,6 +7,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2  #깃 액션에서 라이브러리로 만들어져 있는 코드, 플러그인임, 깃허브 클론 작업
     - name: Setup Java JDK
       uses: actions/setup-java@v4.6.0
       with:
